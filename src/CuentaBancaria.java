@@ -89,7 +89,7 @@ public class CuentaBancaria {
 	}
 	public String toString (){ return "Cuenta Bancaria "+ entidad[0]+""+entidad[1]+""+entidad[2]+""+entidad[3]+
 			"-"+oficina[0]+""+oficina[1]+""+oficina[2]+""+oficina[3]+"-"+digitoControl1()+""+digitoControl2()+
-			"-"+this.numeroCuenta;}
+			"-"+this.numeroCuenta+"----------"+"Fecha Creacion cuenta bancaria "+fechaCreacion;}
 
 
 /*	@Override
