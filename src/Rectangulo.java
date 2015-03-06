@@ -3,6 +3,7 @@ public class Rectangulo {
 
 	private double ancho = 1;
 	private double alto = 1;
+	private static int objetoRectangulo = 0;
 	
 	public Rectangulo(double ancho, double alto) {
 		this.ancho = ancho;
@@ -21,7 +22,7 @@ public class Rectangulo {
 	}
 	
 	
-	private static int objetoRectangulo = 0;
+	
 	public static int cuantosRectangulosHay(){
 		return objetoRectangulo;
 	}
