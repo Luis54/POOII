@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 
 public class CuentaBancaria {
-	private String numeroCuenta ="123";
+	private String numeroCuenta ="";
 	private double saldo = 0;
 	private double interes = 2.5;
 	private LocalDate fechaCreacion;
@@ -19,7 +19,11 @@ public class CuentaBancaria {
 	public void setInteres(double interes) {
 		this.interes = interes;
 	}
+	
 
+	public String getNumeroCuenta() {
+		return numeroCuenta;
+	}
 	public CuentaBancaria(){
 		this.numeroCuenta = numeroDeCuentaAleatorio();
 		this.fechaCreacion = LocalDate.now();
@@ -28,7 +32,6 @@ public class CuentaBancaria {
 	public CuentaBancaria(double saldo, double interes) {
 		this.saldo = saldo;
 		this.interes = interes;
-		System.out.println("constructor"+numeroDeCuentaAleatorio());
 		this.numeroCuenta = numeroDeCuentaAleatorio();
 		this.fechaCreacion = LocalDate.now();
 	}
@@ -91,22 +94,47 @@ public class CuentaBancaria {
 			"-"+oficina[0]+""+oficina[1]+""+oficina[2]+""+oficina[3]+"-"+digitoControl1()+""+digitoControl2()+
 			"-"+this.numeroCuenta+"----------"+"Fecha Creacion cuenta bancaria "+fechaCreacion;}
 
+	public String numeroTotal(){
+		return "Cuenta Bancaria "+ entidad[0]+""+entidad[1]+""+entidad[2]+""+entidad[3]+
+				"-"+oficina[0]+""+oficina[1]+""+oficina[2]+""+oficina[3]+"-"+digitoControl1()+""+digitoControl2()+
+				"-"+this.numeroCuenta;}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((numeroCuenta == null) ? 0 : numeroCuenta.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CuentaBancaria other = (CuentaBancaria) obj;
+		if (numeroCuenta == null) {
+			if (other.numeroCuenta != null)
+				return false;
+		} else if (!numeroCuenta.equals(other.numeroCuenta))
+			return false;
+		return true;
+	}
+	}
 
-/*	@Override
-	public String toString() {
-		return "CuentaBancaria " + numeroCuentasCreadas + " Saldo=" + saldo ;
-	}*/
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
 		CuentaBancaria c1 = new CuentaBancaria();
 		
 		System.out.println(c1);
 	
-	}
+	}*/
 	
 	
 	
 	
 
-}
+
