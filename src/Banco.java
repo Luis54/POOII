@@ -25,32 +25,39 @@ public class Banco {
 		numeroDeCuentas.remove(c);
 	}
 	
-	/*public String cuentaMayor(){
-		String cuentaMayor = "";
-		String saldo = "";
-		for (CuentaBancaria cuentaBancaria : numeroDeCuentas) {
-			if (cuentaBancaria.getSaldo() < cuentaBancaria.getSaldo()) {
-				
+	public CuentaBancaria cuentaMayor(){
+		CuentaBancaria mayorSaldo = numeroDeCuentas.get(0
+				) ;
+		for (int i = 0; i < numeroDeCuentas.size(); i++) {
+			if (numeroDeCuentas.get(i).getSaldo() > mayorSaldo.getSaldo()) {
+				mayorSaldo=numeroDeCuentas.get(i);
 			}
 		}
+			
 		
-		return cuentaMayor;
-	}*/
+				
+			
+		
+		return mayorSaldo;
+	}
 
 	
 	
-	/*public String cuentaMenor(){
-		String cuentaMayor = "";
-		for (CuentaBancaria cuentaBancaria : numeroDeCuentas) {
-			if (cuentaBancaria.getSaldo() > cuentaBancaria.getSaldo() ) {
-				cuentaMayor = cuentaBancaria.numeroTotal();
+	public CuentaBancaria cuentaMenor(){
+		CuentaBancaria menorSaldo = numeroDeCuentas.get(0) ;
+		for (int i = 0; i < numeroDeCuentas.size(); i++) {
+			if (numeroDeCuentas.get(i).getSaldo() < menorSaldo.getSaldo()) {
+				menorSaldo=numeroDeCuentas.get(i);
 				
 			}
 		}
+			
 		
-		return cuentaMayor;
-	}*/
-	
+				
+			
+		
+		return menorSaldo;
+	}
 	public double saldoMedio(){
 		double saldoMedio=0;
 		for (CuentaBancaria cuentaBancaria : numeroDeCuentas) {
@@ -64,14 +71,15 @@ public class Banco {
 	public String toString() {
 		return "Numero de cuentas = " + numeroDeCuentas + " Saldo Medio "+saldoMedio()+"\n";
 	}
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		Banco lista = new Banco();
 		CuentaBancaria c1 = new CuentaBancaria();
-		CuentaBancaria c2 = new CuentaBancaria(100,2.5);
-		CuentaBancaria c3 = new CuentaBancaria(300,3.5);
+		CuentaBancaria c2 = new CuentaBancaria(450,5.5);
+		CuentaBancaria c3 = new CuentaBancaria(150,3.5);
 		lista.guardaCuentas(c1);
 		lista.guardaCuentas(c2);
 		lista.guardaCuentas(c3);
+		System.out.println("La cuenta con mayor saldo es : "+lista.cuentaMenor());
 	
-	}*/
+	}
 }

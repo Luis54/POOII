@@ -1,17 +1,17 @@
-package Diapositivas;
+
 
 public class Ventilador {
 	private  enum posiciones {LENTO,MEDIO,RAPIDO};
-	private  posiciones velocidad = posiciones.LENTO;
-	private boolean funcionado = false;
-	private double rVentilador = 50;
-	private String color = "blanco";
+	private  posiciones velocidad;
+	private boolean funcionado ;
+	private double rVentilador;
+	private String color;
 	
 	public posiciones getVelocidad() {
 		return velocidad;
 	}
-	public void setVelocidad(posiciones velocidad) {
-		this.velocidad = velocidad;
+	public void setVelocidad(posiciones v) {
+		this.velocidad = v;
 	}
 	public boolean isFuncionado() {
 		return funcionado;
@@ -33,7 +33,10 @@ public class Ventilador {
 	}
 	
 	public Ventilador(){
-		
+		this.funcionado = false;
+		this.rVentilador = 50;
+		this.color = "blanco";
+		this.velocidad = posiciones.LENTO;
 	}
 	@Override
 	public String toString() {
