@@ -18,11 +18,13 @@ public class Banco {
 
 
 	public void guardaCuentas(CuentaBancaria c){
-		numeroDeCuentas.add(c);
+		if (!numeroDeCuentas.contains(c)) 
+			numeroDeCuentas.add(c);
 	}
 	
 	public void bajaCuentas(CuentaBancaria c){
-		numeroDeCuentas.remove(c);
+		if (numeroDeCuentas.contains(c)) 
+			numeroDeCuentas.add(c);
 	}
 	
 	public CuentaBancaria cuentaMayor(){

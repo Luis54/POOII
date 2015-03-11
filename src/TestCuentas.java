@@ -16,6 +16,7 @@ public class TestCuentas {
 		System.out.println("-------------------------------------------------");
 		System.out.println("Cuenta mayor saldo "+b.cuentaMayor());
 		System.out.println("Cuenta menor saldo "+b.cuentaMenor());
+		System.out.println("Numero de cuentas creadas: "+CuentaBancaria.getNumeroDeCuentasCreadas());
 		
 		
 	}

@@ -10,6 +10,7 @@ public class TestVentilador {
 		v2.setFuncionado(true);
 		v2.setrVentilador(10000);
 		v2.getVelocidad();
+		v2.setVelocidad(posiciones.RAPIDO);
 		System.out.println(v1);
 		System.out.println(v2);
 	}

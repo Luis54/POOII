@@ -1,8 +1,7 @@
 
 
 public class Ventilador {
-	private  enum posiciones {LENTO,MEDIO,RAPIDO};
-	private  posiciones velocidad;
+	private posiciones velocidad;
 	private boolean funcionado ;
 	private double rVentilador;
 	private String color;
@@ -10,7 +9,7 @@ public class Ventilador {
 	public posiciones getVelocidad() {
 		return velocidad;
 	}
-	public void setVelocidad(posiciones v) {
+	public  void setVelocidad(posiciones v) {
 		this.velocidad = v;
 	}
 	public boolean isFuncionado() {
@@ -40,10 +39,11 @@ public class Ventilador {
 	}
 	@Override
 	public String toString() {
-		return "Ventilador [velocidad=" + velocidad + ", funcionado="
-				+ funcionado + ", rVentilador=" + rVentilador + ", color="
+		return "Ventilador [velocidad = " + velocidad + ", funcionado = "
+				+ funcionado + ", Radio Ventilador = " + rVentilador + ", color = "
 				+ color + "]";
 	}
 	
 	
 }
+enum posiciones {LENTO,MEDIO,RAPIDO};

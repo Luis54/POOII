@@ -5,8 +5,12 @@ public class CuentaBancaria {
 	private double saldo = 0;
 	private double interes = 2.5;
 	private LocalDate fechaCreacion;
+	private static int numeroDeCuentasCreadas = 0;
 	
 	
+	public static int getNumeroDeCuentasCreadas() {
+		return numeroDeCuentasCreadas;
+	}
 	public double getSaldo() {
 		return saldo;
 	}
@@ -27,6 +31,7 @@ public class CuentaBancaria {
 	public CuentaBancaria(){
 		this.numeroCuenta = numeroDeCuentaAleatorio();
 		this.fechaCreacion = LocalDate.now();
+		numeroDeCuentasCreadas++;
 	}
 	
 	public CuentaBancaria(double saldo, double interes) {
@@ -34,24 +39,18 @@ public class CuentaBancaria {
 		this.interes = interes;
 		this.numeroCuenta = numeroDeCuentaAleatorio();
 		this.fechaCreacion = LocalDate.now();
+		numeroDeCuentasCreadas++;
 	}
 	public static int entidad[]= {1,2,3,4};
-	public static int oficina[] = {5,6,7,8};
+	public static int oficina[] = {6,7,8,9};
 	public String numeroDeCuentaAleatorio(){
 		String numero = "";
+		int aleatorio;
 		for (int i = 0; i < 10; i++) {
-			int aleatorio;
-			
 			aleatorio = (int) (Math.random()*10);	
 			numero+=aleatorio;
-			
 		}
-	
-
 		return  numero;
-	
-
-	
 	}
 	public int digitoControl1(){
 	int suma = 0;
@@ -94,10 +93,6 @@ public class CuentaBancaria {
 			"-"+oficina[0]+""+oficina[1]+""+oficina[2]+""+oficina[3]+"-"+digitoControl1()+""+digitoControl2()+
 			"-"+this.numeroCuenta+"----------"+"Fecha Creacion cuenta bancaria "+fechaCreacion;}
 
-	public String numeroTotal(){
-		return "Cuenta Bancaria "+ entidad[0]+""+entidad[1]+""+entidad[2]+""+entidad[3]+
-				"-"+oficina[0]+""+oficina[1]+""+oficina[2]+""+oficina[3]+"-"+digitoControl1()+""+digitoControl2()+
-				"-"+this.numeroCuenta;}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -122,6 +117,7 @@ public class CuentaBancaria {
 			return false;
 		return true;
 	}
+	
 	}
 
 
